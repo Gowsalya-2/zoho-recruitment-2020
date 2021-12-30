@@ -1,0 +1,39 @@
+package com.gowsalya.springBootApp;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class StringSwitch {
+    public static void printString(int length, String word) {
+        int i = 0;
+        int j = 0;
+        for (; i<length; i++) {
+            for(j=2*(length-i); j>=0; j--) {
+                System.out.print(" ");
+            }
+            for(j=0; j<=i; j++) {
+               System.out.print(word.charAt(j));
+               }
+            System.out.println();
+        }
+    }
+
+    public static void main(String args[]) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String word = reader.readLine();;
+        StringBuffer string = new StringBuffer();
+        string.append(word);
+        int length = word.length();
+        int middleValue = length / 2;
+        String rem = string.substring(middleValue,length);
+        String first = string.substring(0,middleValue);
+        String result = rem.concat(first);
+        printString(length, result);
+    }
+}
+
+
+
+
+
