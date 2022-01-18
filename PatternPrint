@@ -1,0 +1,28 @@
+package com.gowsalya.springBootApp;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class RightPattern {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int k=1;
+        int count =1 ;
+        int rows = Integer.parseInt(reader.readLine());
+        int add = rows - 1;
+
+        // print Pattern
+        for (int i=0; i < rows; i++) {// for rows  0                    1
+            for(int j=0; j<=i; j++) {
+                System.out.print(k + " ");
+                k= k + add ;
+                add = add - 1;
+            }
+            add = rows - 1;
+            count++;
+            k=count;;// for new instance
+            System.out.println("\n"); // for next row
+        }
+    }
+}
